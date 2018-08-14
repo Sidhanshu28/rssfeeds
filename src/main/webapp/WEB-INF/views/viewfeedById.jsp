@@ -7,7 +7,9 @@
 <link href="<c:url value='/styles/css/style.css' />" rel="stylesheet"></link>
 <link href="<c:url value='/styles/css/bootstrap.css' />"
 	rel="stylesheet"></link>
-<script src="/styles/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<h1 align="center">Feeds List</h1>
@@ -15,7 +17,7 @@
 	<form:form class="form-horizontal">
 		<table
 			class="table table-bordered table-hovered table-striped viewfeedbyid"
-			style="width: 75%">
+			style="width:75%">
 			<thead>
 				<tr>
 					<th colspan="4">RSS Feed Details</th>
@@ -70,5 +72,21 @@
 				class="btn btn-primary btn-sm"></a>
 		</center>
 	</form:form>
+	<script type="text/javascript">
+(function($) {
+    var $window = $(window),
+        $html = $('html');
+
+    $window.resize(function resize(){
+    	console.log($window.width(),$('.viewfeedbyid').width());
+        if ($window.width() < 768) {
+        	
+            return $('.viewfeedbyid').addClass('table-responsive');
+        }
+
+        $('.viewfeedbyid').removeClass('table-responsive');
+    }).trigger('resize');
+})(jQuery);
+</script>
 </body>
 </html>
