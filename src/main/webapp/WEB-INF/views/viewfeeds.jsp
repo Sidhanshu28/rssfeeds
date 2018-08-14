@@ -17,8 +17,7 @@
 
 		<form:form class="form-horizontal">
 			<table
-				class="table table-bordered table-hovered table-striped viewfeeds"
-				style="width: 100%">
+				class="table table-bordered table-hovered table-striped table-responsive viewfeeds">
 				<thead>
 					<tr>
 						<th>Id</th>
