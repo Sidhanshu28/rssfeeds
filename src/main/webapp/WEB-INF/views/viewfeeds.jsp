@@ -17,7 +17,8 @@
 
 		<form:form class="form-horizontal">
 			<table
-				class="table table-bordered table-hovered table-striped table-responsive viewfeeds">
+				class="table table-bordered table-hovered table-striped viewfeeds"
+				style="text-align:center">
 				<thead>
 					<tr>
 						<th>Id</th>
@@ -121,6 +122,22 @@
             	    }
             	    
             };
-        </script>
+</script>
+<script type="text/javascript">
+(function($) {
+    var $window = $(window),
+        $html = $('html');
+
+    $window.resize(function resize(){
+    	console.log($window.width(),$('.viewfeeds').width());
+        if ($window.width() < 768) {
+        	
+            return $('.viewfeeds').addClass('table-responsive');
+        }
+
+        $('.viewfeeds').removeClass('table-responsive');
+    }).trigger('resize');
+})(jQuery);
+</script>
 </body>
 </html>
