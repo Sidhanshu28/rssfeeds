@@ -92,7 +92,7 @@
             	 var regexQuery = "^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$";
             	 var url = new RegExp(regexQuery,"i");
             	 var isUrl = url.test(feedurl);
-            	var flag = true;
+            	 var flag = true;
             	 try{
                 	 var isValid = new URL(feedurl);
             	 }
@@ -100,31 +100,43 @@
             		flag = false;
             	 }
             	 
+		    //if username is empty
             	    if(feedname=="")
             	    {
             	      alert("Feed Name can not be left blank");
             	      document.loginform.FeedName.focus();
             	      return false;
             	    }
+		    //added validation rule for username should carry letters only
+		     else if(feedname != "" && !/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/.test(feedname)){
+            	    	alert("Only letters are accepted/First ");
+              	      document.loginform.FeedName.focus();
+              	      return false;
+            	    }
+		    //if feedurl is empty
             	    else if(feedurl=="")
             	    {
             	      alert("Feed Url can not be left blank");
             	      document.loginform.feedUrl.focus();
             	      return false;
             	    }
+		    //if url is not valid
             	    else if(!isUrl || !flag){
-                    	 alert("Inncorrect url");
+                    	 alert("Invalid url/no response");
                 	      document.loginform.feedUrl.focus();
                 	      return false;
             	    }
+		    //if inputs gets validated-  will trigger submit event
             	    else {
             	        document.loginform.submit(); // fire submit event
             	    }
             	    
             };
 </script>
+	
 <script type="text/javascript">
-(function($) {
+//script to make responsive design and resizing table by adding/removing class
+	(function($) {
     var $window = $(window),
         $html = $('html');
 
