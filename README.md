@@ -31,6 +31,25 @@ You can follow these steps to get it running and live on your local server.
 - Setup tomcat server within eclipse and start it running
 - Your web application will be live at localhost:8080/rssfeeds/viewFeeds
 
+### Solving errors
+
+If you see 'ContextLoaderException'
+- Go to project properties
+- Select Deployment assembly
+- Click on add
+- Click on 'java build path entries'
+- Click on 'click on maven dependecy'
+- Click 'apply and close'
+
+If you see 'could not find manifest.mf file error'
+- Right click on project
+- Select 'maven'
+- Select 'update project'
+
+If you see database errors
+- Check whether mysql server is running or not
+- Check for path, username and password of database in spring-servlet.xml file, you might have to change them ( depends upon your database )
+- Check mysql root user have permissions or not.
 
 ## Built With
 
