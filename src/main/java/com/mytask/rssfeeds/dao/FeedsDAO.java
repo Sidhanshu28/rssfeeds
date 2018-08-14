@@ -188,16 +188,21 @@ public class FeedsDAO  {
 	/**  convertXMLToString function which converts XML to string and return string
 	returns string */
 	public String convertXMLtoString(String url) throws Exception {
+		String str = "";
+	try {	
 		URL feedurl = new URL(url);/** making String URL to URL type. */
 		URLConnection yc = feedurl.openConnection(); /** getting URL connection */
-        BufferedReader in = new BufferedReader(new InputStreamReader(
-               yc.getInputStream())); /** reading input stream */
-        String inputLine;
-        String str = "";
+		BufferedReader in = new BufferedReader(new InputStreamReader(
+	    yc.getInputStream())); /** reading input stream */
+		String inputLine;
+        
         while ((inputLine = in.readLine()) != null)
         str = str + inputLine; /** interpreting the stream as string */
         	in.close();
-        return str; /** returning a string which needs to be convert in DOM element type. */
+	}
+	catch(Exception e) {
+	}
+	 return str; /** returning a string which needs to be convert in DOM element type. */
 	}
 	
 	
