@@ -31,6 +31,14 @@ You can follow these steps to get it running and live on your local server.
 - Setup tomcat server within eclipse and start it running
 - Your web application will be live at localhost:8080/rssfeeds/viewFeeds
 
+
+### Installing database
+
+- You can copy the script from feeds.sql file ( already there in project) and run it in mysql workbench(or any interface you are using for mysql)
+- Script will automatically creates database with tables in it.
+- Make sure you have created user with name root and put password as rootroot, so as to make this project connected to database. 
+
+
 ### Solving errors
 
 If you see 'ContextLoaderException'

@@ -42,11 +42,10 @@ public class FeedsDAO  {
 	/** setter function for JDBC connection template
 	returns null */
 	public void setTemplate(JdbcTemplate template) {  
-	    this.template = template;  
+	    this.template = template;
 	    getAllFeeds();
-	}  
-	
-	
+	}
+
 	/** save function to save values in feeds table
 	returns null */
 	public void save(Feeds f) throws Exception {
@@ -209,7 +208,7 @@ public class FeedsDAO  {
 	
 	/** getRootElementFromXML is element type function, which return a DOM element.
 	returns DOM element */
-	public Element getRootElementFromXML(String xml) throws SAXException, IOException {
+	public Element getRootElementFromXML(String xml) throws ParserConfigurationException, IOException {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
         Document doc;
@@ -219,8 +218,7 @@ public class FeedsDAO  {
             doc =  builder.parse(new InputSource( new StringReader(xml))); /** parsing XML string */
             Element rootElement = doc.getDocumentElement();
             return  rootElement; /** returning DOM element */
-        } catch (ParserConfigurationException ex) {
-            ex.printStackTrace();
+        } catch (SAXException ex) {
             return null;
         }
 	}
