@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="rssfeeds:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="rssfeeds.war">
+      <element id="artifact" artifact-name="rssfeeds:war exploded" />
+    </root>
+  </artifact>
+</component>
